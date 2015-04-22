@@ -22,7 +22,6 @@ app.get('/', function*(){
 app.post('/projects', cmsBody, function*(){
 	var files = this.request.files;
 	var fields = this.request.fields;
-
   var paths = yield cmsS3.upload(files);
   fields.paths = paths;
 
